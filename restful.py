@@ -16,9 +16,9 @@ app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///C:/Flask_course/section6/data.d
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 jwt = JWT(app,authenticate, identity)  # /auth
 
-@app.before_first_request
-def create_tables():
-    db.create_all()
+##@app.before_first_request
+##def create_tables():
+##    db.create_all()
 
 
 api.add_resource(Item,'/item/<string:name>')
