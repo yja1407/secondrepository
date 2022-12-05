@@ -1,5 +1,5 @@
 from restful import app
-from db import db
+from dbalchemy import db
 
 db.init_app(app)
 
