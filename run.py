@@ -1,4 +1,4 @@
-from app import app
+from restful import app
 from db import db
 
 db.init_app(app)
