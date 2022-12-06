@@ -8,12 +8,13 @@ from sec import authenticate, identity
 from Resources.user import UserRegister
 from Resources.Items import Item, Itemlist
 from Resources.store import Store, StoreList
+import os
 
 app = Flask(__name__)
 app.secret_key = 'yja' # app.config['JWT_SECRET_KEY']
 api = Api(app)
 ##app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///C:/Flask_course/section6/data2.db'
-app.config['SQLALCHEMY_DATABASE_URI']='sqlite:///data2.db'
+app.config['SQLALCHEMY_DATABASE_URI']=os.environ.get('DATABASE_URL', 'sqlite:///data2.db')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 jwt = JWT(app,authenticate, identity)  # /auth
 
